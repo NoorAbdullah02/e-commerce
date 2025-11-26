@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-*7!!kc@bmtx8ngui6lr@xmifmcwm6y%hnbe)rdei(b!ds8t)uq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1']
+
+ALLOWED_HOSTS = ['*', 'localhost', 'https://e-commerce-six-tau-11.vercel.app/']
 
 
 # Application definition
@@ -35,7 +36,7 @@ ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
+    'django.contrib.contenttypes'
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -188,6 +189,16 @@ GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'AIzaSyDoMVhmBOUfFfZ60qGj6TO1F8yyE0
 
 # CORS Configuration
 CORS_ALLOW_ALL_ORIGINS = True
+
+# FROM:
+CORS_ALLOW_ALL_ORIGINS = True
+
+# TO:
+CORS_ALLOWED_ORIGINS = [
+    'https://e-commerce-six-tau-11.vercel.app/',
+    'https://www.yourdomain.com',
+    'https://your-frontend.netlify.app',
+]
 
 
 # STRIPE
