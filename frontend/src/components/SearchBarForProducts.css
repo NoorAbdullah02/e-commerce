@@ -1,0 +1,334 @@
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-form {
+    position: relative;
+    width: 100%;
+}
+
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.search-input-wrapper:focus-within {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    padding: 12px 16px;
+    font-size: 14px;
+    outline: none;
+    background: transparent;
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-button {
+    border: none;
+    background: #007bff;
+    color: white;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: 0 6px 6px 0;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.search-button:hover {
+    background: #0056b3;
+}
+
+.search-button:active {
+    transform: scale(0.98);
+}
+
+/* Suggestions Dropdown */
+.suggestions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.suggestions-header {
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 12px;
+    color: #666;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.suggestion-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.suggestion-item:hover {
+    background: #f8f9fa;
+    padding-left: 20px;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.suggestion-name {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+}
+
+.suggestion-price {
+    font-size: 14px;
+    color: #007bff;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.suggestion-item i {
+    color: #999;
+    margin-left: 8px;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+.suggestion-item:hover i {
+    color: #007bff;
+    transform: translateX(4px);
+}
+
+.suggestions-footer {
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border-top: 1px solid #e0e0e0;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+}
+
+/* No Results State */
+.no-results {
+    padding: 32px 16px;
+    text-align: center;
+}
+
+.no-results i {
+    font-size: 32px;
+    color: #ddd;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.no-results p {
+    margin: 12px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.no-results small {
+    color: #999;
+    display: block;
+    font-size: 12px;
+}
+
+/* Dark Mode Support */
+:root[data-theme="dark"] .search-input-wrapper,
+.dark-mode .search-input-wrapper {
+    background: #2d2d2d;
+    border-color: #444;
+}
+
+:root[data-theme="dark"] .search-input-wrapper:focus-within,
+.dark-mode .search-input-wrapper:focus-within {
+    border-color: #4a9eff;
+    box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
+}
+
+:root[data-theme="dark"] .search-input,
+.dark-mode .search-input {
+    color: #e0e0e0;
+    background: transparent;
+}
+
+:root[data-theme="dark"] .search-input::placeholder,
+.dark-mode .search-input::placeholder {
+    color: #777;
+}
+
+:root[data-theme="dark"] .suggestions-dropdown,
+.dark-mode .suggestions-dropdown {
+    background: #2d2d2d;
+    border-color: #444;
+}
+
+:root[data-theme="dark"] .suggestions-header,
+:root[data-theme="dark"] .suggestions-footer,
+.dark-mode .suggestions-header,
+.dark-mode .suggestions-footer {
+    background: #1a1a1a;
+    border-color: #444;
+    color: #aaa;
+}
+
+:root[data-theme="dark"] .suggestion-item,
+.dark-mode .suggestion-item {
+    border-color: #404040;
+}
+
+:root[data-theme="dark"] .suggestion-item:hover,
+.dark-mode .suggestion-item:hover {
+    background: #3a3a3a;
+}
+
+:root[data-theme="dark"] .suggestion-name,
+.dark-mode .suggestion-name {
+    color: #e0e0e0;
+}
+
+:root[data-theme="dark"] .suggestion-price,
+.dark-mode .suggestion-price {
+    color: #4a9eff;
+}
+
+:root[data-theme="dark"] .no-results p,
+:root[data-theme="dark"] .no-results small,
+.dark-mode .no-results p,
+.dark-mode .no-results small {
+    color: #aaa;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .search-container {
+        max-width: 100%;
+    }
+
+    .search-input {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .search-button {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .suggestions-dropdown {
+        max-height: 300px;
+        border-radius: 0 0 6px 6px;
+    }
+
+    .suggestion-item {
+        padding: 10px 12px;
+    }
+
+    .suggestion-item:hover {
+        padding-left: 14px;
+    }
+
+    .suggestion-name {
+        font-size: 13px;
+    }
+
+    .suggestion-price {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-input {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .search-button {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .suggestions-dropdown {
+        max-height: 250px;
+    }
+
+    .suggestion-item {
+        padding: 8px 10px;
+    }
+
+    .suggestion-content {
+        gap: 8px;
+    }
+
+    .suggestion-name {
+        font-size: 12px;
+    }
+
+    .suggestion-price {
+        font-size: 11px;
+    }
+
+    .suggestions-header,
+    .suggestions-footer {
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+}

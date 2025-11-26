@@ -1,0 +1,314 @@
+/* Modern Navbar Styles */
+
+.navbar-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+.navbar-scroll-light {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-default {
+  background-color: white;
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+@media (min-width: 768px) {
+  .navbar-inner {
+    height: 80px;
+  }
+
+  .navbar-container {
+    padding: 0 32px;
+  }
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar-logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.navbar-logo-text {
+  font-weight: bold;
+  font-size: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .navbar-logo-text {
+    display: inline;
+  }
+}
+
+/* Desktop Menu */
+.navbar-menu-desktop {
+  display: none;
+  align-items: center;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .navbar-menu-desktop {
+    display: flex;
+  }
+}
+
+.navbar-menu-item {
+  color: #374151;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+.navbar-menu-item:hover {
+  color: #667eea;
+}
+
+.navbar-menu-item::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+.navbar-menu-item:hover::after {
+  width: 100%;
+}
+
+/* Search Bar Desktop */
+.navbar-search-desktop {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background: #f3f4f6;
+  border-radius: 9999px;
+  padding: 8px 16px;
+  margin-left: 16px;
+}
+
+@media (min-width: 1024px) {
+  .navbar-search-desktop {
+    display: flex;
+  }
+}
+
+.navbar-search-input {
+  background: transparent;
+  color: #374151;
+  outline: none;
+  border: none;
+  width: 160px;
+  font-size: 14px;
+}
+
+.navbar-search-input::placeholder {
+  color: #9ca3af;
+}
+
+.navbar-search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.navbar-search-btn:hover {
+  color: #667eea;
+  transform: scale(1.1);
+}
+
+/* Right Actions */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar-action-btn:hover {
+  color: #667eea;
+  transform: scale(1.1);
+}
+
+.navbar-search-mobile {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .navbar-search-mobile {
+    display: none;
+  }
+}
+
+.navbar-search-mobile-input {
+  flex: 1;
+  background: #f3f4f6;
+  color: #374151;
+  outline: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.navbar-search-mobile-input::placeholder {
+  color: #9ca3af;
+}
+
+.navbar-search-mobile-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.navbar-search-mobile-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Cart Badge */
+.navbar-cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile Menu Toggle */
+.navbar-mobile-toggle {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .navbar-mobile-toggle {
+    display: none;
+  }
+}
+
+/* Mobile Menu */
+.navbar-menu-mobile {
+  display: none;
+  padding-bottom: 16px;
+}
+
+.navbar-menu-mobile.active {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .navbar-menu-mobile {
+    display: none !important;
+  }
+}
+
+.navbar-mobile-item {
+  display: block;
+  padding: 8px 16px;
+  color: #374151;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar-mobile-item:hover {
+  color: #667eea;
+  background-color: #f9fafb;
+}
+
+/* User Menu Hidden on Mobile */
+@media (max-width: 639px) {
+  .navbar-user-menu {
+    display: none;
+  }
+}
+
+/* Theme Toggle Hidden */
+.navbar-theme-toggle {
+  display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .navbar-inner {
+    height: 56px;
+  }
+
+  .navbar-container {
+    padding: 0 12px;
+  }
+}
