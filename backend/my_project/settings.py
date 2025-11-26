@@ -42,7 +42,7 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes'
+    'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -197,13 +197,10 @@ GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'AIzaSyDoMVhmBOUfFfZ60qGj6TO1F8yyE0
 CORS_ALLOW_ALL_ORIGINS = True
 
 # FROM:
-CORS_ALLOW_ALL_ORIGINS = True
-
-# TO:
 CORS_ALLOWED_ORIGINS = [
-    'https://e-commerce-six-tau-11.vercel.app/',
-    'https://www.yourdomain.com',
-    'https://your-frontend.netlify.app',
+    'https://e-commerce-six-tau-11.vercel.app',
+    'http://localhost:3001',
+    'http://127.0.0.1:3001',
 ]
 
 
@@ -226,6 +223,3 @@ MEDIA_ROOT = 'static/images'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# cors origin
-CORS_ALLOW_ALL_ORIGINS = True
