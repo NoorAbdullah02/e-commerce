@@ -28,7 +28,13 @@ SECRET_KEY = 'django-insecure-*7!!kc@bmtx8ngui6lr@xmifmcwm6y%hnbe)rdei(b!ds8t)uq
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['*', 'localhost', 'https://e-commerce-six-tau-11.vercel.app/']
+ALLOWED_HOSTS = [
+    '*',
+    'localhost',
+    '127.0.0.1',
+    'e-commerce-six-tau-11.vercel.app'
+]
+
 
 
 # Application definition
